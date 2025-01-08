@@ -1,0 +1,13 @@
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.9em;
+  }
+  .status-badge.draft {
+    background-color: #ffd700;
+    color: #000;
+  }
+  .status-badge.open {
+    background-color: #90EE90;
+    color: #000;
+  }

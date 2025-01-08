@@ -1,0 +1,63 @@
+<div class="header-filters">
+  <div class="filter-group">
+    <!-- Work Commenced Date -->
+    <div class="filter-item">
+      <label for="workCommenced">Work Commenced Date</label>
+      <div class="date-range">
+        <input
+          type="date"
+          id="workCommencedStart"
+          [(ngModel)]="filters.workCommencedStart"
+          placeholder="Start Date"
+        />
+        <input
+          type="date"
+          id="workCommencedEnd"
+          [(ngModel)]="filters.workCommencedEnd"
+          placeholder="End Date"
+        />
+      </div>
+    </div>
+
+    <!-- Work Completed Date -->
+    <div class="filter-item">
+      <label for="workCompleted">Work Completed Date</label>
+      <div class="date-range">
+        <input
+          type="date"
+          id="workCompletedStart"
+          [(ngModel)]="filters.workCompletedStart"
+          placeholder="Start Date"
+        />
+        <input
+          type="date"
+          id="workCompletedEnd"
+          [(ngModel)]="filters.workCompletedEnd"
+          placeholder="End Date"
+        />
+      </div>
+    </div>
+
+    <!-- Lost Closed Date -->
+    <div class="filter-item">
+      <label for="lostClosed">Lost Closed Date</label>
+      <div class="date-range">
+        <input
+          type="date"
+          id="lostClosedStart"
+          [(ngModel)]="filters.lostClosedStart"
+          placeholder="Start Date"
+        />
+        <input
+          type="date"
+          id="lostClosedEnd"
+          [(ngModel)]="filters.lostClosedEnd"
+          placeholder="End Date"
+        />
+      </div>
+    </div>
+
+    <!-- Filter Button -->
+    <!-- <button class="apply-button" (click)="applyFilters()">Apply Filters</button> -->
+  </div>
+</div>

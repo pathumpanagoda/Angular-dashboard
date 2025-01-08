@@ -1,0 +1,19 @@
+.lot-table-container {
+    overflow-x: auto;
+  }
+  .lot-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+  }
+  .lot-table th, .lot-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .lot-table th {
+    background-color: #004b8c;
+    color: white;
+  }

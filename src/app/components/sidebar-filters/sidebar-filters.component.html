@@ -1,0 +1,95 @@
+<div class="sidebar-filters">
+  <div class="filter-section">
+    <h2>QTMP LOT - ITP - Subcon Register</h2>
+    <hr />
+
+    <!-- Lot No/Title Filter -->
+    <div class="filter-item">
+      <label>Lot No/Title</label>
+      <div class="search-box">
+        <input
+          type="text"
+          placeholder="Lot No/Title"
+          class="search-input"
+          [(ngModel)]="filters.lotNo"
+          (ngModelChange)="applyFilters()"
+        />
+        <span class="search-icon">🔍</span>
+      </div>
+    </div>
+
+    <!-- Form Date Filter -->
+    <div class="filter-item">
+      <label>Form Date</label>
+      <div class="date-picker">
+        <input
+          type="date"
+          id="workCommencedStart"
+          [(ngModel)]="filters.workCommencedStart"
+          (ngModelChange)="applyFilters()"
+        />
+        <input
+          type="date"
+          id="workCommencedEnd"
+          [(ngModel)]="filters.workCommencedEnd"
+          (ngModelChange)="applyFilters()"
+        />
+      </div>
+    </div>
+
+    <!-- Zone Filter -->
+    <div class="filter-item">
+      <label>Zone</label>
+      <select [(ngModel)]="filters.zone" (ngModelChange)="applyFilters()">
+        <option>All</option>
+        <option>Zone 7</option>
+      </select>
+    </div>
+
+    <!-- Status Filter -->
+    <div class="filter-item">
+      <label>Status</label>
+      <select [(ngModel)]="filters.status" (ngModelChange)="applyFilters()">
+        <option>All</option>
+        <option>Draft</option>
+        <option>Open</option>
+      </select>
+    </div>
+
+    <!-- Engineer Filter -->
+    <div class="filter-item">
+      <label>Engineer</label>
+      <select [(ngModel)]="filters.engineer" (ngModelChange)="applyFilters()">
+        <option>All</option>
+        <option>Engineer 1</option>
+      </select>
+    </div>
+
+    <!-- Subcon Filter -->
+    <div class="filter-item">
+      <label>Subcon</label>
+      <select [(ngModel)]="filters.subcon" (ngModelChange)="applyFilters()">
+        <option>All</option>
+      </select>
+    </div>
+
+    <!-- ITP Assign To Filter -->
+    <div class="filter-item">
+      <label>ITP Assign To</label>
+      <select [(ngModel)]="filters.itpAssignTo" (ngModelChange)="applyFilters()">
+        <option>All</option>
+      </select>
+    </div>
+
+    <!-- Work Type Filter -->
+    <div class="filter-item">
+      <label>Work Type</label>
+      <select [(ngModel)]="filters.workType" (ngModelChange)="applyFilters()">
+        <option>All</option>
+      </select>
+    </div>
+
+    <!-- Reset Button -->
+    <button class="reset-button" (click)="resetFilters()">Reset Search</button>
+  </div>
+</div>

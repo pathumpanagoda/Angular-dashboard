@@ -1,0 +1,53 @@
+.header-filters {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 1px;
+}
+
+.filter-group {
+  display: flex;
+  gap: 25px;
+}
+
+.filter-item {
+  display: flex;
+  flex-direction: column; /* Keeps the label above */
+  gap: 5px; /* Adds spacing between label and inputs */
+}
+
+.filter-item label {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.date-range {
+  display: flex;
+  gap: 5px; /* Adds spacing between the date inputs */
+  align-items: flex-end; /* Aligns inputs to the bottom */
+}
+
+.date-range input[type="date"] {
+  padding: 3px;
+  padding-left: 7px;
+  padding-right: 7px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #004b8c;
+  color: white;
+}
+
+.apply-button {
+  align-self: center;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.apply-button:hover {
+  background-color: #0056b3;
+}

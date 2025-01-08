@@ -1,0 +1,38 @@
+<div class="lot-table-container">
+  <table class="lot-table">
+    <thead>
+      <tr>
+        <th>Form ID</th>
+        <th>File Path</th>
+        <th>Lot No</th>
+        <th>Lot Title</th>
+        <th>Lot Status</th>
+        <th>Zone</th>
+        <th>Temporary/Permanent Works</th>
+        <th>Engineer Responsible</th>
+        <th>Subcontractor</th>
+        <th>ITP Assign To</th>
+        <th>Work Commenced On</th>
+        <th>Work Completed On</th>
+        <th>Lot Closed On</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let lot of filteredLots">
+        <td>{{ lot.formId }}</td>
+        <td><app-file-icon></app-file-icon></td>
+        <td>{{ lot.lotNo }}</td>
+        <td>{{ lot.lotTitle }}</td>
+        <td><app-status-badge [status]="lot.lotStatus"></app-status-badge></td>
+        <td>{{ lot.zone }}</td>
+        <td>{{ lot.workType }}</td>
+        <td>{{ lot.engineerResponsible }}</td>
+        <td>{{ lot.subcontractor }}</td>
+        <td>{{ lot.itpAssignTo }}</td>
+        <td>{{ lot.workCommencedOn }}</td>
+        <td>{{ lot.workCompletedOn }}</td>
+        <td>{{ lot.lotClosedOn }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

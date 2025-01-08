@@ -1,0 +1,6 @@
+<div class="main-layout">
+    <app-sidebar-filters (filterApplied)="lotTable.applyFilters($event)"></app-sidebar-filters>
+    <div class="content">
+      <app-lot-table #lotTable></app-lot-table>
+    </div>
+  </div>
