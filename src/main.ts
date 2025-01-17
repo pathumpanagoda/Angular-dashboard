@@ -10,10 +10,10 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
   imports: [MainLayoutComponent, HeaderFiltersComponent],
   template: `
     <div class="app-container">
-      <header class="header">
+      <!-- <header class="header">
         <img src="https://gamuda.com.my/wp-content/uploads/2022/06/logo-header-red.png" alt="Gamuda Logo" class="logo">
         <app-filters></app-filters>
-      </header>
+      </header> -->
       <app-main-layout></app-main-layout>
     </div>
   `,

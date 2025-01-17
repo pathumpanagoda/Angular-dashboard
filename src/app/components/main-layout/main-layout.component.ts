@@ -2,11 +2,12 @@ import { SidebarFiltersComponent } from './../sidebar-filters/sidebar-filters.co
 import { CommonModule } from '@angular/common';
 import { Component, ViewChild } from '@angular/core';
 import { LotTableComponent } from '../lot-table/lot-table.component';
+import { HeaderFiltersComponent } from "../filters/filters.component";
 
 @Component({
   selector: 'app-main-layout',
   standalone: true,
-  imports: [CommonModule, SidebarFiltersComponent, LotTableComponent],
+  imports: [CommonModule, SidebarFiltersComponent, LotTableComponent, HeaderFiltersComponent],
   templateUrl: './main-layout.component.html',
   styleUrls: ['./main-layout.component.css'], // Corrected from 'styleUrl'
 })

@@ -40,12 +40,13 @@
 
 .apply-button {
   align-self: center;
-  background-color: #007bff;
+  background-color: #249c2e;
   color: white;
   border: none;
   padding: 8px 12px;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 15px;
 }
 
 .apply-button:hover {

@@ -1,6 +1,12 @@
 <div class="main-layout">
+  <header class="header">
+    <img src="https://gamuda.com.my/wp-content/uploads/2022/06/logo-header-red.png" alt="Gamuda Logo" class="logo">
+    <app-filters (filterApplied)="lotTable.applyFilters($event)"></app-filters>
+  </header>
+  <div class="body-layout">
     <app-sidebar-filters (filterApplied)="lotTable.applyFilters($event)"></app-sidebar-filters>
     <div class="content">
       <app-lot-table #lotTable></app-lot-table>
     </div>
   </div>
+</div>

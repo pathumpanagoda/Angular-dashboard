@@ -17,8 +17,7 @@ export class HeaderFiltersComponent {
     workCompletedStart: '',
     workCompletedEnd: '',
     lostClosedStart: '',
-    lostClosedEnd: '',
-    all: false,
+    lostClosedEnd: ''
   };
 
   // Output event to send filter data to parent
@@ -27,12 +26,6 @@ export class HeaderFiltersComponent {
   ngOnInit(): void {
     // Set current date as the default value for all date fields
     const currentDate = new Date().toISOString().split('T')[0];
-    this.filters.workCommencedStart = currentDate;
-    this.filters.workCommencedEnd = currentDate;
-    this.filters.workCompletedStart = currentDate;
-    this.filters.workCompletedEnd = currentDate;
-    this.filters.lostClosedStart = currentDate;
-    this.filters.lostClosedEnd = currentDate;
   }
 
   // Method to apply filters
@@ -48,8 +41,7 @@ export class HeaderFiltersComponent {
       workCompletedStart: '',
       workCompletedEnd: '',
       lostClosedStart: '',
-      lostClosedEnd: '',
-      all: false,
+      lostClosedEnd: ''
     };
     this.filterApplied.emit(this.filters);
   }
