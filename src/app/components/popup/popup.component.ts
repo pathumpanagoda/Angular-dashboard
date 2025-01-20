@@ -1,63 +1,38 @@
-import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-
+import { Component, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-popup',
-  standalone: true,
-  imports: [],
   templateUrl: './popup.component.html',
-  styleUrl: './popup.component.css'
+  styleUrls: ['./popup.component.css'],
+  standalone: true,
+  imports: [CommonModule],
 })
 export class PopupComponent {
-  showPopup = false;
   selectedFile: File | null = null;
-  previewData: any[] | null = null;
+  isUploading = false; // To show a loading indicator if needed
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    public dialogRef: MatDialogRef<PopupComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) {}
 
-  openPopup() {
-    this.showPopup = true;
-  }
-
-  closePopup() {
-    this.showPopup = false;
-    this.selectedFile = null;
-    this.previewData = null;
-  }
-
-  onFileSelect(event: any) {
-    this.selectedFile = event.target.files[0];
-    if (this.selectedFile) {
-      const reader = new FileReader();
-      reader.onload = (e: any) => {
-        const data = e.target.result;
-        // Here, send the file to backend for parsing or process locally.
-        this.previewData = this.parseExcelFile(data); // Example method
-      };
-      reader.readAsBinaryString(this.selectedFile);
+  // Handle file selection
+  onFileSelect(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length > 0) {
+      this.selectedFile = input.files[0];
     }
   }
 
-  uploadFile() {
-    if (this.selectedFile) {
-      const formData = new FormData();
-      formData.append('file', this.selectedFile);
-
-      this.http.post('http://localhost:8080/api/lots/import', formData).subscribe({
-        next: (response) => {
-          alert('File uploaded successfully!');
-          this.closePopup();
-        },
-        error: (err) => {
-          alert('Error uploading file: ' + err.message);
-        },
-      });
-    }
+  // Save the selected file and send it to the backend
+  onSave(): void {
+    
   }
 
-  parseExcelFile(data: any): any[] {
-    // Optional: Implement Excel parsing logic for preview.
-    return [];
+  // Cancel file selection
+  onCancel(): void {
+    this.dialogRef.close();
   }
 }

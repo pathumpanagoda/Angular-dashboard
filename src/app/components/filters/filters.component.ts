@@ -1,14 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { PopupComponent } from '../popup/popup.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-filters',
   templateUrl: './filters.component.html',
-  styleUrl: './filters.component.css',
+  styleUrls: ['./filters.component.css'], // Corrected property
   imports: [CommonModule, FormsModule],
   standalone: true,
 })
+
 export class HeaderFiltersComponent {
   // Filter values object
   filters = {
@@ -44,5 +47,14 @@ export class HeaderFiltersComponent {
       lostClosedEnd: ''
     };
     this.filterApplied.emit(this.filters);
+  }
+  constructor(private dialog: MatDialog) {}
+
+  // Method to open the popup
+  openPopup(): void {
+    this.dialog.open(PopupComponent, {
+      width: '400px', // Set the width of the popup
+      data: {} // Pass any data you want to the popup component
+    });
   }
 }

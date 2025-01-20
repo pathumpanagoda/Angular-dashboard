@@ -44,5 +44,5 @@ export class App {
 }
 
 bootstrapApplication(App, {
-  providers: [provideAnimationsAsync()]
+  providers: [provideAnimationsAsync(), provideAnimationsAsync()]
 });
