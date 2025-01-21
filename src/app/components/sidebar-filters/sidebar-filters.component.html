@@ -61,7 +61,9 @@
       <label>Engineer</label>
       <select [(ngModel)]="filters.engineer" (ngModelChange)="applyFilters()">
         <option>All</option>
-        <option>Engineer 1</option>
+        <option>Engineer A</option>
+        <option>Engineer B</option>
+        <option>Engineer C</option>
       </select>
     </div>
 
@@ -78,6 +80,7 @@
       <label>ITP Assign To</label>
       <select [(ngModel)]="filters.itpAssignTo" (ngModelChange)="applyFilters()">
         <option>All</option>
+        
       </select>
     </div>
 
@@ -86,6 +89,8 @@
       <label>Work Type</label>
       <select [(ngModel)]="filters.workType" (ngModelChange)="applyFilters()">
         <option>All</option>
+        <option>Temporary_Works</option>
+        <option>Permanent_Works</option>
       </select>
     </div>
 

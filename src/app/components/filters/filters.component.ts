@@ -57,4 +57,10 @@ export class HeaderFiltersComponent {
       data: {} // Pass any data you want to the popup component
     });
   }
+
+  //Delete file method
+  deleteFile(): void {
+    // Your delete file logic here
+    
+  }
 }

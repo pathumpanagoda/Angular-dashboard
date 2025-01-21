@@ -1,19 +1,19 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-popup',
   templateUrl: './popup.component.html',
   styleUrls: ['./popup.component.css'],
   standalone: true,
-  imports: [CommonModule],
+  imports: [HttpClientModule,]
 })
 export class PopupComponent {
   selectedFile: File | null = null;
-  isUploading = false; // To show a loading indicator if needed
 
   constructor(
+    private http: HttpClient,
     public dialogRef: MatDialogRef<PopupComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {}
@@ -26,9 +26,29 @@ export class PopupComponent {
     }
   }
 
-  // Save the selected file and send it to the backend
+  // Save the selected file
   onSave(): void {
-    
+    if (this.selectedFile) {
+      const formData = new FormData();
+      formData.append('file', this.selectedFile);
+
+      this.http
+        .post('http://localhost:8185/api/lots/upload', formData)
+        .subscribe(
+          (response) => {
+            console.log('File uploaded successfully:', response);
+            this.dialogRef.close(response);
+          this.onCancel();
+          this.reloadPage();
+          },
+          (error) => {
+            console.error('Error uploading file:', error);
+          }
+        );
+    }
+  }
+  reloadPage() {
+    throw new Error('Method not implemented.');
   }
 
   // Cancel file selection
